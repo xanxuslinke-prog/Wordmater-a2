@@ -1,5 +1,9 @@
 """
-WordMaster backend (Flask + SQLite + JWT)
+   WordMaster backend — Flask + SQLite + JWT.
+   
+   Provides authentication (register/login with bcrypt + JWT),
+   CRUD endpoints for vocabulary words, daily check-in tracking,
+   and admin user management.
 
 Security highlights:
 - Passwords hashed with bcrypt (12 rounds)

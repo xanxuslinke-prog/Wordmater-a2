@@ -1,0 +1,377 @@
+@import "tailwindcss";
+@import "@fontsource-variable/nunito";
+
+/* ============ Soft Pastel Design Tokens (Unicorn theme) ============ */
+@theme {
+  /* Primary: soft lavender (was Duolingo green) */
+  --color-primary: #b794e8;
+  --color-primary-dark: #9a78d0;
+  --color-primary-light: #ebd9ff;
+
+  /* Pink: warm coral pink */
+  --color-pink: #ff9ec6;
+  --color-pink-dark: #f37cab;
+  --color-pink-light: #ffe0ee;
+
+  /* Mint */
+  --color-mint: #8ed6b4;
+  --color-mint-dark: #6cbf99;
+  --color-mint-light: #d4f0e1;
+
+  /* Peach */
+  --color-peach: #ffc89a;
+  --color-peach-dark: #ffae6e;
+  --color-peach-light: #ffe8d4;
+
+  /* Sky blue */
+  --color-sky: #9dcaef;
+  --color-sky-dark: #7ab1de;
+  --color-sky-light: #dfecf8;
+
+  /* Coral (replaces red/danger but softer) */
+  --color-coral: #ff8a8a;
+  --color-coral-dark: #e76d6d;
+
+  /* Lemon (replaces yellow) */
+  --color-lemon: #ffd97e;
+  --color-lemon-dark: #f0c25e;
+
+  /* Base */
+  --color-duo-cream: #fff5e8;
+  --color-duo-paper: #fffbf3;
+  --color-ink: #4a3f5e;
+  --color-ink-soft: #8a7d9e;
+  --color-line: #ede5f0;
+
+  --font-display: "Nunito Variable", system-ui, sans-serif;
+}
+
+/* ============ Base ============ */
+body {
+  font-family: var(--font-display);
+  background: linear-gradient(180deg, #fff5e8 0%, #ffe8f4 100%);
+  background-attachment: fixed;
+  color: var(--color-ink);
+  margin: 0;
+  min-height: 100vh;
+  font-weight: 600;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input, button {
+  font-family: inherit;
+  font-weight: 700;
+}
+
+/* ============ Pop buttons (with bottom shadow) ============ */
+.btn-pop {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.08s, box-shadow 0.08s, filter 0.15s;
+  user-select: none;
+  white-space: nowrap;
+}
+.btn-pop:active {
+  transform: translateY(3px);
+}
+
+/* Primary (lavender) */
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+  box-shadow: 0 4px 0 var(--color-primary-dark);
+}
+.btn-primary:hover { filter: brightness(1.05); }
+.btn-primary:active { box-shadow: 0 1px 0 var(--color-primary-dark); }
+
+/* Pink */
+.btn-pink {
+  background: var(--color-pink);
+  color: white;
+  box-shadow: 0 4px 0 var(--color-pink-dark);
+}
+.btn-pink:hover { filter: brightness(1.05); }
+.btn-pink:active { box-shadow: 0 1px 0 var(--color-pink-dark); }
+
+/* Mint */
+.btn-mint {
+  background: var(--color-mint);
+  color: white;
+  box-shadow: 0 4px 0 var(--color-mint-dark);
+}
+.btn-mint:hover { filter: brightness(1.05); }
+.btn-mint:active { box-shadow: 0 1px 0 var(--color-mint-dark); }
+
+/* Sky */
+.btn-sky {
+  background: var(--color-sky);
+  color: white;
+  box-shadow: 0 4px 0 var(--color-sky-dark);
+}
+.btn-sky:hover { filter: brightness(1.05); }
+.btn-sky:active { box-shadow: 0 1px 0 var(--color-sky-dark); }
+
+/* Coral (delete) */
+.btn-coral {
+  background: var(--color-coral);
+  color: white;
+  box-shadow: 0 4px 0 var(--color-coral-dark);
+}
+.btn-coral:hover { filter: brightness(1.05); }
+.btn-coral:active { box-shadow: 0 1px 0 var(--color-coral-dark); }
+
+/* Lemon */
+.btn-lemon {
+  background: var(--color-lemon);
+  color: var(--color-ink);
+  box-shadow: 0 4px 0 var(--color-lemon-dark);
+}
+.btn-lemon:hover { filter: brightness(1.05); }
+.btn-lemon:active { box-shadow: 0 1px 0 var(--color-lemon-dark); }
+
+/* Ghost */
+.btn-ghost {
+  background: white;
+  color: var(--color-ink-soft);
+  border: 2px solid var(--color-line);
+  box-shadow: 0 4px 0 var(--color-line);
+}
+.btn-ghost:hover { color: var(--color-ink); border-color: #d8cae0; box-shadow: 0 4px 0 #d8cae0; }
+.btn-ghost:active { box-shadow: 0 1px 0 #d8cae0; }
+
+.btn-pop:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* ============ Inputs ============ */
+.input-pop {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid var(--color-line);
+  border-radius: 0.875rem;
+  background: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  color: var(--color-ink);
+}
+.input-pop:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+.input-pop::placeholder {
+  color: #c4b8d1;
+  font-weight: 600;
+}
+
+/* ============ Card with bottom-shadow pop ============ */
+.card-pop {
+  background: white;
+  border: 2px solid var(--color-line);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 0 var(--color-line);
+}
+
+/* ============ Word card flip ============ */
+.word-card {
+  perspective: 1200px;
+  cursor: pointer;
+  position: relative;
+}
+.word-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.word-card.flipped .word-card-inner {
+  transform: rotateY(180deg);
+}
+.word-card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.word-card-back {
+  transform: rotateY(180deg);
+}
+
+/* ============ Card flip effects: rainbow halo + sparkle particles ============ */
+.word-card-glow {
+  position: absolute;
+  inset: -8px;
+  border-radius: 1.6rem;
+  background: linear-gradient(135deg,
+    var(--color-pink) 0%,
+    var(--color-peach) 20%,
+    var(--color-lemon) 40%,
+    var(--color-mint) 60%,
+    var(--color-sky) 80%,
+    var(--color-primary) 100%);
+  opacity: 0;
+  filter: blur(14px);
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.3s;
+}
+.word-card.flipping .word-card-glow {
+  animation: glow-pulse 0.9s ease-in-out;
+}
+
+@keyframes glow-pulse {
+  0% { opacity: 0; transform: scale(0.85); }
+  40% { opacity: 1; transform: scale(1.1); }
+  70% { opacity: 0.8; transform: scale(1.05); }
+  100% { opacity: 0; transform: scale(0.9); }
+}
+
+/* Sparkle particles bursting from card edges outward */
+.sparkle {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 5;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.7));
+}
+.sparkle svg { width: 100%; height: 100%; }
+
+.word-card.flipping .sparkle {
+  animation: sparkle-burst 0.8s ease-out forwards;
+}
+
+@keyframes sparkle-burst {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0) rotate(0deg);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(var(--dx, 0), var(--dy, 0)) scale(1.1) rotate(180deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(var(--dx, 0) * 1.8), calc(var(--dy, 0) * 1.8)) scale(0.4) rotate(360deg);
+  }
+}
+
+/* ============ Rainbow "mastered" card style — like unicorn mane ============ */
+.rainbow-card {
+  background: linear-gradient(135deg,
+    #ffd0e8 0%,
+    #ffe0c0 18%,
+    #fff3b0 35%,
+    #d4f0d4 52%,
+    #c8edee 68%,
+    #d4e4f7 84%,
+    #e8d5f5 100%);
+  overflow: hidden;
+}
+.rainbow-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 70%);
+  animation: shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes shimmer {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+
+/* ============ Wordbook deck: fan-out preview on hover ============ */
+.wordbook-deck {
+  position: relative;
+  cursor: pointer;
+}
+.wordbook-card-stack {
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Default: tight stack with slight offset */
+.wordbook-card-stack[data-stack-index="0"] { transform: translate(-4px, 0px) rotate(-3deg); }
+.wordbook-card-stack[data-stack-index="1"] { transform: translate(-2px, -1px) rotate(-1.5deg); }
+.wordbook-card-stack[data-stack-index="2"] { transform: translate(0, -2px) rotate(0deg); }
+.wordbook-card-stack[data-stack-index="3"] { transform: translate(2px, -1px) rotate(1.5deg); }
+.wordbook-card-stack[data-stack-index="4"] { transform: translate(4px, 0px) rotate(3deg); }
+
+/* Hover: fan out like a poker hand */
+.wordbook-deck:hover .wordbook-card-stack[data-stack-index="0"] {
+  transform: translate(-32px, -6px) rotate(-22deg);
+}
+.wordbook-deck:hover .wordbook-card-stack[data-stack-index="1"] {
+  transform: translate(-16px, -3px) rotate(-11deg);
+}
+.wordbook-deck:hover .wordbook-card-stack[data-stack-index="2"] {
+  transform: translate(0, -2px) rotate(0deg);
+}
+.wordbook-deck:hover .wordbook-card-stack[data-stack-index="3"] {
+  transform: translate(16px, -3px) rotate(11deg);
+}
+.wordbook-deck:hover .wordbook-card-stack[data-stack-index="4"] {
+  transform: translate(32px, -6px) rotate(22deg);
+}
+
+/* Wordbook pulse when a card lands in it */
+@keyframes wordbook-catch {
+  0%, 100% { transform: scale(1); }
+  40% { transform: scale(1.15) rotate(-2deg); }
+  70% { transform: scale(0.97) rotate(1deg); }
+}
+.wordbook-catching {
+  animation: wordbook-catch 0.5s ease-out;
+}
+
+/* ============ Scrollbar ============ */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #e0d4e8; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #c8b5d4; }
+
+/* ============ Animations ============ */
+@keyframes bounce-in {
+  0% { transform: scale(0.9); opacity: 0; }
+  60% { transform: scale(1.03); }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-bounce-in { animation: bounce-in 0.3s ease-out; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float { animation: float 3s ease-in-out infinite; }

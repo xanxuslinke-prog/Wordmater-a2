@@ -174,6 +174,10 @@ Two-person group. Both members contributed across the stack; the breakdown below
   - JWT configuration (token expiry strategy and secure signing setup)
   - Password hashing using bcrypt
   - Role-based authorization model (admin vs regular users)
+  - Improved backend validation and input safety checks
+  - Improved JWT identity type consistency (string → integer)
+- System reliability improvements:
+  - Added health check endpoint (GET /)
 - Cross-system integration support:
   - Designed API contracts used by frontend components
   - Ensured consistency of data flow between frontend and backend

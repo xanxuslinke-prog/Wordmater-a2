@@ -2,7 +2,6 @@
 
 A full-stack single-page web application for collecting, reviewing, and mastering vocabulary, with a daily check-in streak system and a "wordbook" collection mechanic. Designed around a pastel, illustrative aesthetic centred on a scholarly unicorn mascot. 
 
-ex
 
 **Assignment 2 submission for 31748 / 32516 — Web Programming.**
 
@@ -162,22 +161,29 @@ WordMaster/
 
 Two-person group. Both members contributed across the stack; the breakdown below reflects primary ownership of each area.
 
-### Kexin Liu (Student ID: 25951839) — Mainly responsible for backend development and foundational design system setup.
-* **Original project framework (Assignment 1)** — the foundation everything else builds on, including the original Flask scaffolding, user-auth flow, and CRUD endpoints for the words table
-* Backend Flask API in `backend/app.py` (route handlers, SQLite queries, request/response shape)
-* Database schema in `backend/vocab.db` and `init_db()`
-* README and project documentation (`README.md`)
-* Tailwind design tokens (`frontend/src/index.css` colour variables, `.btn-pop` / `.card-pop` / `.input-pop` reusable patterns)
-* Card interaction system:
-  * Card flip animation with smooth front/back transition effects
-  * Learned/unlearned state management and synchronization
-  * Card deletion workflow with confirmation handling
-  * Add/edit vocabulary card functionality with modal-based form interaction
-* Authentication pages and logic:
-  * User registration page implementation (`Register.jsx`)
-  * User login page implementation (`Login.jsx`)
-  * Form validation, authentication state handling, and API integration
-* Video recording and demonstration of the application
+### Kexin Liu (Student ID: 25951839) — Mainly responsible for backend architecture, system design, and core application infrastructure.
+
+- Original project framework (Assignment 1), including initial Flask architecture and authentication flow
+- Backend REST API design and implementation (`app.py`), including:
+  - Authentication system (JWT access + refresh tokens)
+  - Vocabulary CRUD endpoints and validation logic
+  - Check-in system and user activity tracking
+  - Admin management APIs and role-based access control
+- Database architecture design (SQLite schema for users, vocabulary, history, check-ins)
+- Security design decisions:
+  - JWT configuration (token expiry strategy and secure signing setup)
+  - Password hashing using bcrypt
+  - Role-based authorization model (admin vs regular users)
+- Cross-system integration support:
+  - Designed API contracts used by frontend components
+  - Ensured consistency of data flow between frontend and backend
+- Design system foundation support:
+  - Defined reusable UI design tokens (shared Tailwind variables and styling conventions)
+  - Supported component consistency requirements used across frontend development
+- Project documentation (`README.md`) and system design rationale
+- Video editing and demonstration of the application
+
+Kexin’s role focused on building and defining the underlying system architecture and ensuring that all frontend features were supported by stable, secure, and consistent backend services.
 
 ### Yuexin Li (Student ID: 13157464) — Mainly responsible for frontend pages, components, animations, and visual effects.
 - Frontend pages: `Login.jsx`, `Register.jsx`, `Dashboard.jsx`, `Admin.jsx`
@@ -194,7 +200,7 @@ Two-person group. Both members contributed across the stack; the breakdown below
 
 This split was chosen so that one member focused on the platform foundation (backend, database, design system, docs) while the other built the visible product surface (every interactive screen, every animation, every micro-interaction). Both members reviewed each other's code through GitHub.
 
-Workload is roughly **50% Kexin Liu / 50% Yuexin Li**. Both contributions are essential — the polished surface would not exist without the foundation, and the foundation alone would not meet the assignment's complexity bar.
+Workload is approximately balanced (~50/50), with both members contributing across the full stack but leading different system layers. Both contributions are essential — the polished surface would not exist without the foundation, and the foundation alone would not meet the assignment's complexity bar.
 
 ---
 

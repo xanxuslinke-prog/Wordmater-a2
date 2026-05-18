@@ -199,6 +199,13 @@ def home():
     })
 
 
+# ================= HEALTH CHECK ================= #
+
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({"status": "ok"})
+
+
 # ================= AUTH: REGISTER ================= #
 
 @app.route("/register", methods=["POST"])

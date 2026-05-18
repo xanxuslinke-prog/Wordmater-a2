@@ -1,6 +1,8 @@
 # WordMaster — Flashcard Vocabulary Learning App
 
-A full-stack single-page web application for collecting, reviewing, and mastering vocabulary, with a daily check-in streak system and a "wordbook" collection mechanic. Designed around a pastel, illustrative aesthetic centred on a scholarly unicorn mascot.
+A full-stack single-page web application for collecting, reviewing, and mastering vocabulary, with a daily check-in streak system and a "wordbook" collection mechanic. Designed around a pastel, illustrative aesthetic centred on a scholarly unicorn mascot. 
+
+ex
 
 **Assignment 2 submission for 31748 / 32516 — Web Programming.**
 

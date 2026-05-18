@@ -280,7 +280,7 @@ def login():
             "msg": "Wrong password"
         }), 401
 
-    identity = str(user["id"])
+    identity = int(user["id"])
 
     access_token = create_access_token(identity=identity)
     refresh_token = create_refresh_token(identity=identity)
